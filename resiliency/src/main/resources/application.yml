@@ -1,0 +1,5 @@
+resilience4j.circuitbreaker:
+    instances:
+      backendA:
+        registerHealthIndicator: true
+        slidingWindowSize: 100
