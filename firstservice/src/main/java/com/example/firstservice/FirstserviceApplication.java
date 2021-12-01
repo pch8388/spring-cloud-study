@@ -25,7 +25,7 @@ public class FirstserviceApplication {
 	@GetMapping("/hello/{id}")
 	public String hello(@PathVariable String id) throws InterruptedException {
 		log.info("First service welcome start !!");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		return "hello " + id;
 	}
 }
