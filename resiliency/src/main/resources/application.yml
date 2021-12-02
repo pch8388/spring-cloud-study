@@ -1,5 +1,12 @@
-resilience4j.circuitbreaker:
-    instances:
-      backendA:
-        registerHealthIndicator: true
-        slidingWindowSize: 100
+#resilience4j.circuitbreaker:
+#    configs:
+#      default:
+#        slidingWindowSize: 100
+#        permittedNumberOfCallsInHalfOpenState: 10
+#        waitDurationInOpenState: 10000
+#        failureRateThreshold: 60
+#        eventConsumerBufferSize: 10
+#        registerHealthIndicator: true
+#    instances:
+#      backendA:
+#        baseConfig: default
