@@ -27,7 +27,7 @@ public class ResiliencyController {
 		return client.get().uri("localhost:8081/hello/" + id)
 			.exchangeToMono(res -> res.bodyToMono(String.class))
 			.flatMap(r -> Mono.just("welcome " + r))
-			.transform(CircuitBreakerOperator.of(circuitBreaker))
+			.transformDeferred(CircuitBreakerOperator.of(circuitBreaker))
 			.onErrorResume(this::fallback);
 	}
 
