@@ -1,4 +1,4 @@
-package me.study.resiliency;
+package me.study.resiliency.welcome;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
