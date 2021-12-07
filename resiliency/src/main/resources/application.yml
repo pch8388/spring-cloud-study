@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: resilience4j-study
+
+management.health.circuitbreakers.enabled: true
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      backend:
+        baseConfig: default
+
+
+api:
+  uri: localhost
+  port: 8081
