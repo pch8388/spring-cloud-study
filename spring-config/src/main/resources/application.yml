@@ -8,3 +8,9 @@ spring:
       server:
         native:
           search-locations: file://${user.home}/working/spring-cloud-config
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

@@ -4,8 +4,16 @@ server:
 spring:
   application:
     name: my-first-service
+  profiles:
+    active: default
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,env
