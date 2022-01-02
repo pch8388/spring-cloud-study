@@ -2,6 +2,7 @@ package com.example.firstservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootApplication
 @RestController
 @Slf4j
+@RefreshScope
 public class FirstserviceApplication {
 
 	public static void main(String[] args) {
