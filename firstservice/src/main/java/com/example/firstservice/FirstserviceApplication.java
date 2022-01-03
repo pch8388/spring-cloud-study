@@ -1,5 +1,6 @@
 package com.example.firstservice;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,6 +18,14 @@ public class FirstserviceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FirstserviceApplication.class, args);
+	}
+
+	@Value("${my.property}")
+	private String property;
+
+	@GetMapping
+	public String home() {
+		return "my property : " + property;
 	}
 
 	@GetMapping("/welcome")
