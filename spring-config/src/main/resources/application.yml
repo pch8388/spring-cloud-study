@@ -1,13 +1,9 @@
 server:
   port: 8888
 spring:
-  profiles:
-    active: native
   cloud:
     config:
       server:
-#        native:
-#          search-locations: file://${user.home}/working/spring-cloud-config
         git:
           uri: https://github.com/pch8388/spring-cloud-study
           search-paths: common-config
