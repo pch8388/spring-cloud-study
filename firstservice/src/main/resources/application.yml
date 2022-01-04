@@ -7,10 +7,10 @@ spring:
   profiles:
     active: default
 
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
 
 management:
   endpoints:
