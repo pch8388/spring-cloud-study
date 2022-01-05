@@ -2,13 +2,14 @@ server:
   port: 8081
 
 spring:
-  application:
-    name: first-service
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
+  config:
+    import:
+      optional:configserver: https://localhost:8888
 
 #eureka:
 #  client:
