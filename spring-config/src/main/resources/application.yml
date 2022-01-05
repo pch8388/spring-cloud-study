@@ -7,9 +7,14 @@ spring:
         git:
           uri: https://github.com/pch8388/spring-cloud-study
           search-paths: common-config
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,refresh
+        include: health,refresh,busrefresh
