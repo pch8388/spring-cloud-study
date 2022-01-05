@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: my-first-service
+    name: first-service
   rabbitmq:
     host: 127.0.0.1
     port: 5672
