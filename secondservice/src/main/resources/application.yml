@@ -4,8 +4,22 @@ server:
 spring:
   application:
     name: my-second-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  config:
+    import:
+      optional:configserver: https://localhost:8888
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,busrefresh
