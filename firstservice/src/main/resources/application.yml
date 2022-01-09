@@ -11,7 +11,7 @@ spring:
     password: guest
   config:
     import:
-      optional:configserver: https://localhost:8888
+      configserver:http://localhost:8888
 
 #eureka:
 #  client:
