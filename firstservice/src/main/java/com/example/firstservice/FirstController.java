@@ -1,5 +1,6 @@
 package com.example.firstservice;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -10,14 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 @RefreshScope
+@RequiredArgsConstructor
 public class FirstController {
 
     @Value("${common.property}")
     private String property;
 
+    private final SecondClient secondClient;
+
     @GetMapping
     public String home() {
-        return "my property : " + property;
+        return "my property : " + property + " , second property : " + secondClient.home();
     }
 
     @GetMapping("/welcome")
