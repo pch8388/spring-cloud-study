@@ -20,15 +20,15 @@ public class JobConfig {
 
     @Bean
     public Job job() {
-        return this.jobBuilderFactory.get("helloJob")
-                .start(helloStepOne())
-                .next(helloStepTwo())
+        return this.jobBuilderFactory.get("job")
+                .start(step1())
+                .next(step2())
                 .build();
     }
 
     @Bean
-    public Step helloStepOne() {
-        return this.stepBuilderFactory.get("helloStepOne")
+    public Step step1() {
+        return this.stepBuilderFactory.get("step1")
                 .tasklet(((contribution, chunkContext) -> {
 
                     log.info("=====================");
@@ -42,8 +42,8 @@ public class JobConfig {
     }
 
     @Bean
-    public Step helloStepTwo() {
-        return this.stepBuilderFactory.get("helloStepOne")
+    public Step step2() {
+        return this.stepBuilderFactory.get("step2")
                 .tasklet(((contribution, chunkContext) -> {
 
                     log.info("=====================");
