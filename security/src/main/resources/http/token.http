@@ -4,10 +4,11 @@ Authorization: Basic ZWFnbGVleWU6dGhpc2lzc2VjcmV0
 
 grant_type=password&scope=webclient&username=john.carnell&password=password1
 
-> {% client.global.set("token", response.body.access_token);
+> {%
+client.global.set("token", response.body.access_token);
 client.log("토큰 : " + client.global.get("token"));
 %}
 
 ###
 GET http://localhost:8080/auth/user
-Authorization: Bearer a4e85a19-903a-42fc-8182-d8888b3fe98e
+Authorization: Bearer {{token}}
