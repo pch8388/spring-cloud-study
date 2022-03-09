@@ -30,3 +30,8 @@ management:
 logging:
   level:
     com.example.firstservice: DEBUG
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8901/auth/user
