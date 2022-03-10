@@ -31,7 +31,11 @@ logging:
   level:
     com.example.firstservice: DEBUG
 
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:8901/auth/user
+
+---
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri:  http://127.0.0.1:8901/auth/user

@@ -5,4 +5,5 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8081
+GET http://localhost:8081/welcome
+Authorization: Bearer f19d691c-3466-426c-bda3-81e792fc35f1

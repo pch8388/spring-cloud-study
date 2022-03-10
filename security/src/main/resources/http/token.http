@@ -1,4 +1,4 @@
-POST http://localhost:8080/auth/oauth/token
+POST http://localhost:8901/auth/oauth/token
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic ZWFnbGVleWU6dGhpc2lzc2VjcmV0
 
@@ -10,5 +10,5 @@ client.log("토큰 : " + client.global.get("token"));
 %}
 
 ###
-GET http://localhost:8080/auth/user
+GET http://localhost:8901/auth/user
 Authorization: Bearer {{token}}
