@@ -38,4 +38,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri:  http://127.0.0.1:8901/auth/user
+          issuer-uri:  http://127.0.0.1:8901/auth/user # jwt 토큰 검증 url 로 변경 필요
