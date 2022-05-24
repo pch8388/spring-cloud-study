@@ -18,6 +18,7 @@ public class FirstController {
     private String property;
 
     private final SecondClient secondClient;
+    private final FirstService firstService;
 
     @GetMapping
     public String home() {
@@ -34,5 +35,10 @@ public class FirstController {
         log.info("First service welcome start !!");
         Thread.sleep(5000);
         return "hello " + id;
+    }
+
+    @GetMapping("/book/{id}")
+    public Book book(@PathVariable String id) {
+        return firstService.getBook(id);
     }
 }

@@ -11,6 +11,9 @@ spring:
     password: guest
   config:
     import: "configserver:http://localhost:8888"
+  redis:
+    host: 127.0.0.1
+    port: 6379
 
 eureka:
   instance:
