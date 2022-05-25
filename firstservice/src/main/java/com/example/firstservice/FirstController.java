@@ -7,6 +7,8 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.EmitterProcessor;
+import reactor.core.publisher.Sinks;
 
 @RestController
 @Slf4j
@@ -19,6 +21,7 @@ public class FirstController {
 
     private final SecondClient secondClient;
     private final FirstService firstService;
+    private final EmitterProcessor<BookChangeModel> processor = EmitterProcessor.create();
 
     @GetMapping
     public String home() {
@@ -40,5 +43,11 @@ public class FirstController {
     @GetMapping("/book/{id}")
     public Book book(@PathVariable String id) {
         return firstService.getBook(id);
+    }
+
+    @GetMapping("/send")
+    public void send() {
+        log.info("controller send");
+        processor.onNext(new BookChangeModel("DELETE", "1"));
     }
 }
