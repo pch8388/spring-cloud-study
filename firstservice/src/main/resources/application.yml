@@ -18,18 +18,15 @@ spring:
     stream:
       bindings:
         sink-in-0:
-          destination: book-change-topic
+          destination: bookChange
           content-type: application/json
-          group: bookGroup
-        send-out-0:
-          destination: book-change-topic
-          content-type: application/json
-          group: bookGroup
+          group: bookChange
       kafka:
         binder:
-          zkNodes: localhost
-          brokers: localhost
+          brokers: 127.0.0.1
+          auto-create-topics: true
       default-binder: kafka
+
 
 eureka:
   instance:

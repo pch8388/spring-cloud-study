@@ -11,6 +11,19 @@ spring:
     password: guest
   config:
     import: "configserver:http://localhost:8888"
+  cloud:
+    stream:
+      bindings:
+        send-out-0:
+          destination: bookChange
+          content-type: application/json
+          producer:
+            requiredGroup: bookChange
+      kafka:
+        binder:
+          brokers: 127.0.0.1
+          auto-create-topics: true
+      default-binder: kafka
 
 eureka:
   instance:
@@ -26,3 +39,10 @@ management:
     web:
       exposure:
         include: health,info
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud: DEBUG
+        integration: DEBUG
